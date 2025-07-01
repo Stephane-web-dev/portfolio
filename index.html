@@ -1,123 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MathGPT Pro 2.0 – by T.R.S</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/mathjs@11.8.0/lib/browser/math.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/function-plot@1.23.1/dist/function-plot.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Portfolio de René Stéphane</title>
+  <meta name="description" content="je suis René Stéphane, un futur developpeur web">
+  <meta name="keywords" content="développeur,René,Stéphane,web,futur">
+  <meta name="googlebot" content="pour le google">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { margin: 0; font-family: sans-serif; background: #0d1117; color: #c9d1d9; display: flex; flex-direction: column; height: 100vh; }
-    header { display: flex; justify-content: space-between; padding: 10px 20px; background: #161b22; align-items: center; }
-    header .logo { font-weight: bold; font-size: 18px; }
-    .controls button { background: none; border: none; font-size: 18px; margin-left: 10px; color: white; cursor: pointer; }
-    .chat-window { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-    .message { padding: 10px; border-radius: 10px; max-width: 80%; white-space: pre-wrap; line-height: 1.4; font-size: 14px; }
-    .user { align-self: flex-end; background: #238636; color: black; }
-    .bot { align-self: flex-start; background: #30363d; }
-    form { display: flex; padding: 15px; background: #161b22; }
-    input { flex: 1; padding: 10px; border-radius: 6px; border: none; margin-right: 10px; background: #0d1117; color: white; }
-    button[type="submit"] { background: #238636; border: none; color: white; padding: 10px 15px; border-radius: 6px; cursor: pointer; }
-    #plot { background: white; border-radius: 8px; padding: 10px; margin-top: 10px; }
-    @media (max-width: 600px) {
-      .chat-window { padding: 10px; }
-      input, button[type="submit"] { font-size: 14px; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(200deg, #667eea, yellow, aqua); 
+      color: #333;
+    }
+
+    header {
+      background: red;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 10px;
+      max-width: 350px;
+    }
+
+    nav {
+      background-color: #555;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .reseaux a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .projet, .certificat {
+      background-color: #eee;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+
+    .competences {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .competences span {
+      background-color: #dfe6e9;
+      padding: 10px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+#cv, #blog {
+  padding: 60px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.btn-cv {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-cv:hover {
+  background-color: #5a60d3;
+}
+
+.blog-post {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.blog-post:hover, .projet:hover, .certificat:hover {
+  transform: translateY(+15px);
+  border-radius: 0px 20px 0px 20px;
+  background: linear-gradient(140deg, #f0f0f0, grey);
+}
+.blog-post h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+    @media screen and (max-width: 600px) {
+      header img {
+        width: 90px;
+        height: 90px;
+      }
+      #poeme {
+  background-color: transparent; 
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat; 
+  padding: 3rem 1rem;
+  backdrop-filter: brightness(0.9);
+        #poeme::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+#poeme div {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+    footer {
+    background-color: #333;
+      color: white;
+      text-align: center;
+      font-family: serif;
+      padding: 20px;
+      margin-top: 30px;
     }
   </style>
+  
 </head>
-<body>
+<body onclick="changerCouleurFond(this)">
+
   <header>
-    <div class="logo">📘 MathGPT Pro 2.0</div>
-    <div class="controls">
-      <button id="themeToggle">🌙</button>
-      <button id="langSwitch">🇬🇧</button>
+    <img src="https://stephanerns.github.io/my-portfolio/profil.jpg" alt="Photo de profil" align="left" />
+    <h1>René Stéphane<br><center>TIAVINIAINA</center></h1>
+    <p>Développeur web en devenir | Passionné de technologie</p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/Stephane-web-dev" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </header>
-  <main class="chat-window" id="chat"></main>
-  <form id="chatForm">
-    <input type="text" id="chatInput" placeholder="Type your math problem..." required />
-    <button type="submit">Send</button>
-  </form>
+
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#apropos">À propos</a>
+    <a href="#competences">Compétences</a>
+    <a href="#certificats">Certificats</a>
+    <a href="#projets">Projets</a>
+    <a href="#blog">Blog</a>
+    <a href="#poeme">Mon poeme</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <main>
+  <section id="accueil">
+    <h2>Bienvenue !</h2>
+    <p>Je suis étudiant en informatique à la CNTEMAD Antsirabe, amateur de volley-ball, passionné par le développement web, les jeux vidéo, l'intelligence artificielle et la création de projets innovants.</p>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos de moi</h2>
+    <p>J'aime créer des choses utiles, apprendre des technologies modernes et collaborer avec d'autres développeurs pour construire le futur du web.</p>
+  </section>
+  <section id="competences">
+    <h2>Mes Compétences</h2>
+    <div class="competences">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>Git & GitHub</span>
+      <span>Pascal</span>
+      <span>Responsive Design</span>
+    </div>
+  </section>
+
+  <section id="certificats">
+    <h2>Certificats</h2>
+    <div class="certificat">
+      <p>CEPE - Collège Saint Michel (2016)</p>
+      <p>BEPC - Voantsinapy Antsirabe (2021)</p>
+      <p>Baccalauréat Scientifique - Lycée André Resampa (2024)</p>
+    </div>
+    <div class="certificat">
+      <h3>Introduction à l'Intelligence Artificielle</h3>
+      <p>Plateforme : OpenAI Learn</p>
+    </div>
+    <div class="certificat">
+      <h3>Développement Web Débutant</h3>
+      <p>Plateforme : Codecademy / FreeCodeCamp</p>
+    </div>
+  </section>
+
+  <section id="projets">
+    <h2>Mes projets</h2>
+    <div class="projet">
+      <h3>Mini-profil interactif</h3>
+      <p>Une petite page de profil animée en HTML, CSS et JavaScript.</p>
+    </div>
+    <div class="projet">
+      <h3>Clash Dashboard</h3>
+      <p>Un concept de tableau de bord inspiré de Clash of Clans (à venir).</p>
+    </div>
+    <div class="projet">
+      <h3>Jeux video</h3>
+      <p>Concepts en développement</p>
+    </div>
+  </section>
+
+
+
+
+<section id="blog">
+  <h2>📝 Mon Blog</h2>
+
+  <article class="blog-post">
+    <h3>Comment j’ai commencé le développement web sans PC</h3>
+    <p>
+      Quand j’ai décidé de devenir développeur web, je n’avais pas d’ordinateur. Certains m’auraient dit que ce n’était pas le bon moment, ou que c’était trop compliqué. Mais ma passion pour la technologie et la création de sites web était plus forte que les obstacles.
+Tout a commencé avec mon téléphone Android. J’ai utilisé Acode, GitHub Mobile pour apprendre à coder en HTML/CSS/JS. J’ai créé un portfolio et un projet inspiré de Clash of Clans. La passion et la motivation peuvent surmonter n’importe quel obstacle !  Je continue à apprendre tous les jours. Mon objectif est de devenir un développeur web complet, capable de créer des sites modernes et d’intégrer l’intelligence artificielle dans mes projets.
+    </p>
+  </article>
+
+  <article class="blog-post">
+    <h3>Pourquoi l’intelligence artificielle me passionne</h3>
+    <p>
+      L’IA m’inspire car elle transforme nos vies : jeux, réseaux sociaux, assistants, etc. J’aimerais l’intégrer à mes projets web pour personnaliser les expériences. Un jour, je souhaite créer ma propre IA et participer à l’évolution du web intelligent. Je ne sais pas exactement où cette passion va me mener, mais je sais qu’elle va m’ouvrir des portes. C’est pourquoi j’apprends le développement web, et un jour, j’aimerais aussi maîtriser des outils comme Python, TensorFlow ou OpenAI.
+
+    </p>
+  </article>
+</section>
+<section id="poeme" style=" padding: 3rem 1rem;">
+ <h2>🔴 Mon poeme</h2>
+ <div style="max-width: 800px; margin: auto; background-color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 2rem;">
+    <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Mon Chemin Silencieux</h2>
+
+    <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">
+      Enfant d’un monde en détresse, né sans habits à la mode,<br>
+      Sans souliers brillants aux pieds, sans luxe, ni grandes choses.<br>
+      Au lever du jour, seuls mes rêves me servaient de trésor,<br>
+      Des contes et des espoirs pour marcher encore et encore.<br><br>
+
+      Pas de maison pleine d’or, ni de table toujours garnie,<br>
+      Mais des parents au cœur grand, riches de foi et d’envie.<br>
+      Ils m’ont appris avec amour, même quand tout semblait dur,<br>
+      Le savoir comme héritage, un cadeau pur et sûr.<br><br>
+
+      Je n’avais pas de vrais amis, pas de main pour me soutenir,<br>
+      Mais jamais je ne me suis plaint, j’ai préféré construire.<br>
+      Tandis que certains se moquaient, dans l’ombre ou par derrière,<br>
+      Je me disais en silence : <em>« Un jour, je serai lumière. »</em><br><br>
+
+      Mon rêve est mon pilier, mon feu, mon repère,<br>
+      Devenir la fierté de mes parents, voilà ce que j’espère.<br>
+      Je n’accepterai pas l’échec, malgré la douleur ou les croix,<br>
+      Je serai un homme accompli, un jour, vous verrez, ce sera moi !<br><br>
+
+      Même si le début fut amer, comme une encre sans couleur,<br>
+      Je ferai de la fin un miel, un sommet de grandeur.<br>
+      Je suis ce rêveur silencieux, sans jamais perdre espoir,<br>
+      Prêt à marquer ce monde — à briller, à écrire mon histoire.
+    </p>
+    <h2 style="text-align: right; color: aqua; ">R.N.S</h2>
+
+      </div>
+</section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="reseaux">
+      <div class="social-icons">
+
+        <p><i class="fab fa-envelope"></i> stephanetyas@gmail.com</p>
+        <p><i class="fab fa-phone"></i> +261 38 79 014 51</p>
+          <p><a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a> +261 37 78 318 16</p>
+      <p><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a> René Štéphäne </p></div>
+      <a href="https://github.com/stephane-web-dev" target="_blank">GitHub</a>
+    </div>
+  </section>
+  </main>-
+ <footer style="background-color: #333;color: white;text-align: center;font-family: serif; padding: 20px; margin-top: 30px;">
+    <p>&copy; 2025 René Stéphane TIAVINIAINA – Tous droits réservés</p>
+  </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const chat = document.getElementById("chat");
-      const chatForm = document.getElementById("chatForm");
-      const chatInput = document.getElementById("chatInput");
-      const themeToggle = document.getElementById("themeToggle");
-      const langSwitch = document.getElementById("langSwitch");
-      let currentLang = "en";
-      const T = {
-        en: { placeholder: "Type your math problem...", fail: "❌ Cannot solve this.", result: "✅ Result:", copied: "📋 Copied!" },
-        fr: { placeholder: "Tapez votre problème...", fail: "❌ Impossible de résoudre.", result: "✅ Résultat:", copied: "📋 Copié !" }
-      };
-
-      function renderMath(el) {
-        renderMathInElement(el, { delimiters: [{ left: "$$", right: "$$", display: true }] });
-      }
-
-      function addMessage(msg, isUser) {
-        const div = document.createElement("div");
-        div.className = `message ${isUser ? 'user' : 'bot'}`;
-        div.innerHTML = msg;
-        chat.appendChild(div);
-        renderMath(div);
-        chat.scrollTop = chat.scrollHeight;
-      }
-
-      function trySolve(input) {
-        try {
-          if (input.startsWith("solve(")) {
-            const expr = input.slice(6, -1);
-            const sol = math.solve(expr, 'x');
-            return `🔎 <b>Solutions:</b><br>$$${sol.toString()}$$`;
-          } else if (input.startsWith("derive(")) {
-            const expr = input.slice(7, -1);
-            return `📐 <b>Derivative:</b><br>$$${math.derivative(expr, 'x').toString()}$$`;
-          } else if (input.startsWith("integrate(")) {
-            const expr = input.slice(10, -1);
-            return `🧮 <b>Integral:</b><br>$$\int ${expr} dx$$`;
-          } else if (input.startsWith("plot(")) {
-            const expr = input.slice(5, -1);
-            const container = document.createElement("div");
-            container.id = "plot";
-            chat.appendChild(container);
-            functionPlot({ target: "#plot", width: 350, height: 250, grid: true, data: [{ fn: expr }] });
-            return `📊 <b>Graph:</b> $$y = ${expr}$$`;
-          } else {
-            const simplified = math.simplify(input);
-            const result = math.evaluate(input);
-            return `🔎 <b>Simplified:</b><br>$$${simplified}$$<br><br>${T[currentLang].result} <br>$$${result}$$`;
-          }
-        } catch (e) {
-          return T[currentLang].fail;
-        }
-      }
-
-      chatForm.onsubmit = e => {
-        e.preventDefault();
-        const input = chatInput.value.trim();
-        if (!input) return;
-        addMessage(input, true);
-        chatInput.value = "";
-        setTimeout(() => addMessage(trySolve(input), false), 500);
-      };
-
-      themeToggle.onclick = () => {
-        document.body.classList.toggle("light");
-        document.body.classList.toggle("dark");
-        themeToggle.textContent = document.body.classList.contains("light") ? "☀️" : "🌙";
-      };
-
-      langSwitch.onclick = () => {
-        currentLang = currentLang === "en" ? "fr" : "en";
-        langSwitch.textContent = currentLang === "en" ? "🇬🇧" : "🇫🇷";
-        chatInput.placeholder = T[currentLang].placeholder;
-      };
-    });
+    function changerCouleurFond(el) {
+      const couleurs = ['#ff7675', 'aqua', '#74b9ff','#55efc4', '#ffeaa7', '#fab1a0', 'linear-gradient(to right, #667eea, #764ba2)'];
+      const index = Math.floor(Math.random() * couleurs.length);
+      document.body.style.background = couleurs[index];
+    }
   </script>
 </body>
 </html>
