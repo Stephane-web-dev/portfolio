@@ -38,6 +38,13 @@
       border: 3px solid white;
       margin-bottom: 10px;
       max-width: 350px;
+      height: 150px;
+  padding: 5px;
+  background: linear-gradient(45deg, cyan, magenta);
+  animation: glow 3s linear infinite;
+  transition: all 0.4s;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  
     }
 
     nav {
@@ -139,16 +146,7 @@
   color: #333;
   margin-bottom: 10px;
 }
-header img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  padding: 5px;
-  background: linear-gradient(45deg, cyan, magenta);
-  animation: glow 3s linear infinite;
-  transition: all 0.4s;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
-}
+
 
 @keyframes glow {
   0%   { filter: hue-rotate(0deg); }
@@ -198,7 +196,7 @@ header img {
 <body onclick="changerCouleurFond(this)">
 
   <header>
-    <img src="https://stephanerns.github.io/my-portfolio/profil.jpg" alt="Photo de profil" align="left" />
+    <img src="https://stephanerns.github.io/my-portfolio/profil.jpg" alt="Photo de profil" id="profil-img" align="left" />
     <h1>René Stéphane<br><center>TIAVINIAINA</center></h1>
     <p>Développeur web en devenir | Passionné de technologie</p>
     <div class="social-icons">
@@ -244,9 +242,9 @@ header img {
   <section id="certificats">
     <h2>Certificats</h2>
     <div class="certificat">
-      <p>CEPE - Collège Saint Michel (2016)</p>
+      <p>CEPE - Collège Saint Michel Ambohitsara Est(2016)</p>
       <p>BEPC - Voantsinapy Antsirabe (2021)</p>
-      <p>Baccalauréat Scientifique - Lycée André Resampa (2024)</p>
+      <p>Baccalauréat Scientifique - Lycée André Resampa Antsirabe(2024)</p>
     </div>
     <div class="certificat">
       <h3>Introduction à l'Intelligence Artificielle</h3>
@@ -353,13 +351,14 @@ Tout a commencé avec mon téléphone Android. J’ai utilisé Acode, GitHub Mob
     function changerCouleurFond(el) {
       const couleurs = ['#ff7675', 'aqua', '#74b9ff','#55efc4', '#ffeaa7', '#fab1a0', 'linear-gradient(to right, #667eea, #764ba2)'];
       const index = Math.floor(Math.random() * couleurs.length);
-      document.body.style.background = couleurs[index];}
+      document.body.style.background = couleurs[index];
+    }
     
          const img = document.getElementById("profile-img");
     
 const images = [
   "profil1.jpg",
-  "profil2.jpg";
+  "profil2.jpg"];
 
 let index = 0;
 
