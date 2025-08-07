@@ -39,11 +39,6 @@
       margin-bottom: 10px;
       max-width: 350px;
       height: 150px;
-  padding: 5px;
-  background: linear-gradient(45deg, cyan, magenta);
-  animation: glow 3s linear infinite;
-  transition: all 0.4s;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
   
     }
 
@@ -296,7 +291,8 @@ Tout a commencé avec mon téléphone Android. J’ai utilisé Acode, GitHub Mob
 </section>
 <section id="poeme" style=" padding: 3rem 1rem;">
  <h2>🔴 Mon poeme</h2>
- <div style="max-width: 800px; margin: auto; background-color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 2rem;">
+ <div style="max-width: 800px; margin: auto; background-color: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); padding: 2rem;padding: 5px; background: linear-gradient(45deg, cyan, magenta);animation: glow 3s linear infinite;  transition: all 0.4s;  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  ">
     <h2 style="text-align: center; font-size: 2rem; color: #2c3e50; margin-bottom: 1rem;">Mon Chemin Silencieux</h2>
 
     <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">
@@ -325,7 +321,7 @@ Tout a commencé avec mon téléphone Android. J’ai utilisé Acode, GitHub Mob
       Je suis ce rêveur silencieux, sans jamais perdre espoir,<br>
       Prêt à marquer ce monde — à briller, à écrire mon histoire.
     </p>
-    <h2 style="text-align: right; color: aqua; ">R.N.S</h2>
+    <h2 style="text-align: right; color: aqua; ">Er-N Stéph'N</h2>
 
       </div>
 </section>
@@ -354,20 +350,7 @@ Tout a commencé avec mon téléphone Android. J’ai utilisé Acode, GitHub Mob
       document.body.style.background = couleurs[index];
     }
     
-         const img = document.getElementById("profile-img");
-    
-const images = [
-  "profil1.jpg",
-  "profil2.jpg"];
-
-let index = 0;
-
-document.body.addEventListener("click", () => {
-  index = (index + 1) % images.length;
-  img.src = images[index];
-}); 
- 
-    
+       
   </script>
 </body>
 </html>
