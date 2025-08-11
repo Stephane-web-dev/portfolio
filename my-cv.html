@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cv Trs</title>
+<meta charset="utf-8" />
+<style type="text/css">
+	table{
+		align:center;
+		width:100%;
+		height:100%;
+		}
+	:root{
+	--red:#d64545;--sky:#5cc8ff;--yellow:#f5c156;--brown:#6b4f3a;
+	--bg:#f4f6f8;--text:#222;--muted:#6b7280;--card:#fff;
+	--a4-margin-mm:20mm;
+	}
+	*{box-sizing:border-box}
+	html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased}
+	a{color:inherit;text-decoration:none}
+	.wrap{max-width:100%;margin:24px auto;padding:18px}
+	.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:12px}
+	.lang-switch{display:flex;gap:8px}
+	.lang-btn{padding:6px 10px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer;font-size:13px}
+	.lang-btn.active{background:linear-gradient(90deg,var(--sky),#7be0ff);color:#053247;border:0}
+	.btn-print{background:var(--brown);color:#fff;padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+	.card{display:flex;gap:20px;background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 30px rgba(20,20,30,0.06)}
+	.side{width:300px;min-width:260px}
+	.main{flex:1;min-width:0}
+	.contact, .labels{padding:12px;border-radius:10px;margin-bottom:12px}
+	.tag{display:inline-block;padding:6px 10px;border-radius:999px;font-size:13px;margin:6px 6px 0 0;background:linear-gradient(90deg,var(--sky),#7be0ff);color:#053247;}
+	.skills .skill{margin-bottom:10px}
+	.skill .label{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+	.bar{background:lightgray;border-radius:999px;height:10px;overflow:hidden}
+	.bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--sky),var(--yellow),var(--red));width:0;transition:width 1.1s ease}
+	h2.section{font-size:16px;margin:0 0 12px 0;color:var(--red);display:flex;align-items:center;gap:10px}
+	.section-block{padding:14px 0;border-bottom:1px dashed #eef2f5}
+	.role{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+	.muted{color:var(--muted);font-size:13px}
+	.desc{margin-top:8px;color:#2c3340;font-size:14px;line-height:1.5}
+	.projects a{display:inline-block;margin-right:10px;margin-top:8px;padding:6px 10px;border-radius:8px;background:linear-gradient(90deg,var(--yellow),#ffd87a);font-size:13px}
+	.signature{margin-top:12px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:10px}
+	.titre{font-weight: bold;margin:0px; padding: 0px; background:transparent; text-align: center; border-radius: 20px;width: 100%; border-right: 4px inset blue; border-bottom: 4px inset blue;}
+	
+	
+	@media (max-width:900px){
+	.card{flex-direction:column}
+	.side{width:100%}
+	.profile-pic{height:200px}
+	}
+	
+	@page {
+	size: A4 portrait;
+	margin: var(--a4-margin-mm);
+	}
+	@media print{
+	html,body{background:white}
+	.wrap{max-width:unset;margin:0;padding:0}
+	.card{box-shadow:none;border-radius:0;padding:10mm 0 0 0;display:block}
+	.topbar, .lang-switch, .btn-print { display:none !important; } 
+	.side, .main{width:100%;display:block}
+	.side{padding:0 10mm 6mm 10mm}
+	.main{padding:0 10mm 10mm 10mm}
+	.profile-pic{height:50mm} 
+	.profile-pic img{width:100%;height:100%;object-fit:cover}
+	
+	body{font-size:12px}
+	h2.section{font-size:14px}
+	.desc{font-size:12px;line-height:1.4}
+	.muted{font-size:11px}
+	.skills .label{font-size:12px}
+	.bar{height:8px; }
+	.tag{font-size:11px;padding:4px 8px}
+	
+	section, article, .profile-pic, .contact, .skills { page-break-inside: avoid; -webkit-page-break-inside: avoid; break-inside: avoid; }
+	}
+	
+	
+	[data-lang]{display:none}
+	[data-lang].show{display:block}
+	
+</style>
+</head>
+<body>
+	<div style="display:flex;gap:12px;align-items:center">
+	<div class="lang-switch" role="tablist" aria-label="Langue">
+	<button class="lang-btn active" data-setlang="fr" aria-pressed="true">FR</button>
+	<button class="lang-btn" data-setlang="en" aria-pressed="false">EN</button>
+	</div>
+	<button class="btn-print" onclick="window.print()">
+	<span data-lang="fr" class="show">Télécharger PDF</span>
+	<span data-lang="en">Download PDF</span>
+	</button>
+	</div>
+	</div>
+	<div class="card" role="document" >
+	
+	<table>
+		<tr>
+		<td style="padding-right: 10px; border-radius:20px; border-right:4px inset blue; border-bottom:3px inset blue;"class="td1">
+		
+		<h2 style="text-align: center; text-width: bold;">TIAVINIAINA<br><span style="font-size: 23px;"> René Stéphane</span></h2>
+		
+		<p data-lang="fr" class="show" style="text-align: center;">Developpeur web - Etudiant</p><p data-lang="en">Web Developper - Student</p>
+		<div class="contact">
+		<div class="titre">Contact & Info</div>
+		<p><strong data-lang="fr" class="show">Email:</strong><strong data-lang="en">Email:</strong> <a href="mailto:stephanetyas@gmail.com">stephanetyas@gmail.com</a></p>
+		<p><strong data-lang="fr" class="show">Tél:</strong><strong data-lang="en">Phone:</strong> +261 38 79 014 51</p>
+		<p><strong data-lang="fr" class="show">WhatsApp:</strong><strong data-lang="en">WhatsApp:</strong> +261 37 78 318 16 </p>
+		<p><strong data-lang="fr" class="show">Nationalité:</strong><strong data-lang="en">Nationality:</strong> Malagasy</p>
+		<p><strong data-lang="fr" class="show">Genre:</strong><strong data-lang="en">Gender:</strong> <span data-lang="fr" class="show">Masculin</span><span data-lang="en">Male</span></p>
+		<p><strong data-lang="fr" class="show">Date de naissance:</strong><strong data-lang="en">Date of birth:</strong> 05.04.2007</p>
+		<p><strong data-lang="fr" class="show">Localisation:</strong><strong data-lang="en">Location:</strong> Antsirabe, Madagascar</p>
+		<p><strong data-lang="fr" class="show">Portfolio:</strong><strong data-lang="en">Portfolio:</strong> <a href="https://stephane-web-dev.github.io/portfolio" target="_blank">stephane-web-dev.github.io/portfolio</p>
+		<p style="margin-top:8px"><strong data-lang="fr" class="show titre">Langues:</strong><strong data-lang="en" class="titre">Languages:</strong><br>
+		<span class="tag">Malagasy</span><span class="tag" style="background:linear-gradient(90deg,#ffd97a,#ffb86b);color:#053247">Français</span><span class="tag" style="background:linear-gradient(90deg,#cdefff,#9fd7ff);color:#053247">Anglais</span>
+		</p>
+		</div>
+		
+		<div style="margin-top:12px">
+		<div style="font-weight:700;margin-bottom:8px" data-lang="fr" class="show titre">Compétences</div>
+		<div style="font-weight:700;margin-bottom:8px" data-lang="en" class="titre">Skills</div>
+		<div class="skills" aria-hidden="false">
+		<div class="skill">
+		<div class="label"><span>HTML</span><span class="label">90%</span></div>
+		<div class="bar"><i data-width="90%" style="width:90%"></i></div>
+		</div>
+		<div class="skill">
+		<div class="label"><span>CSS</span><span class="label">70%</span></div>
+		<div class="bar"><i data-width="70%" style="width:70%"></i></div>
+		</div>
+		<div class="skill">
+		<div class="label"><span>JavaScript</span><span class="label">30%</span></div>
+		<div class="bar"><i data-width="30%" style="width:30%"></i></div>
+		</div>
+		<div class="skill">
+		<div class="label"><span>Pascal</span><span class="label">55%</span></div>
+		<div class="bar"><i data-width="55%" style="width:55%"></i></div>
+		</div>
+		<div class="skill">
+		<div class="label"><span>Git & GitHub</span><span class="label">85%</span></div>
+		<div class="bar"><i data-width="85%" style="width:85%"></i></div>
+		</div>
+		<div class="skill">
+		<div class="label"><span>Responsive desing</span><span class="muted">75%</span></div>
+		<div class="bar"><i data-width="75%" style="width:75%"></i></div>
+		</div>
+		</div>
+		</div>
+		
+		
+		</td>
+		<td style="padding:13px;">
+			<section class="section-block" aria-labelledby="summary">
+			<h2 class="section" id="summary">
+			<span data-lang="fr" class="show">Résumé / À propos</span>
+			<span data-lang="en">Summary / About</span>
+			</h2>
+			<div class="desc">
+			<div data-lang="fr" class="show">
+			Développeur web en formation, axé UI/UX et performances. J'aime créer des interfaces claires, accessibles et responsives.
+			<div style="margin-top:8px" class="muted">Signature : <em>"Simple, rapide et efficace : votre site en ligne."</em></div>
+			</div>
+			<div data-lang="en">
+			Web developer in training, focused on UI/UX and performance. I enjoy building clear, accessible, responsive interfaces.
+			<div style="margin-top:8px" class="muted">Tagline: <em>"Simple, fast and effective: your site online."</em></div>
+			</div>
+			</div>
+			</section>
+			<section class="section-block" aria-labelledby="experience">
+		<h2 class="section" id="experience">
+		<span data-lang="fr" class="show">Expérience & Projets</span>
+		<span data-lang="en">Experience & Projects</span>
+		</h2>
+		
+		<article class="role">
+		<div>
+		<h4><span data-lang="fr" class="show">Portfolio Personnel — Auteur (2024)</span><span data-lang="en">Personal Portfolio — Creator (2024)</span></h4>
+		<div class="muted"><span data-lang="fr" class="show">HTML • CSS • JS • GitHub Pages</span><span data-lang="en">HTML • CSS • JS • GitHub Pages</span></div>
+		<p class="desc">
+		<span data-lang="fr" class="show">Conception et déploiement d’un portfolio responsive pour présenter mes projets et compétences.</span>
+		<span data-lang="en">Designed and deployed a responsive portfolio to showcase my projects and skills.</span>
+		</p>
+		
+		</div>
+		
+		</article>
+		
+		<article class="role">
+		<div>
+		<h4><span data-lang="fr" class="show">Clash Dashboard — Développeur Frontend (2023-2024)</span><span data-lang="en">Clash Dashboard — Frontend Developer (2023-2024)</span></h4>
+		<div class="muted"><span data-lang="fr" class="show">JS • Charting • UI</span><span data-lang="en">JS • Charting • UI</span></div>
+		<p class="desc">
+		<span data-lang="fr" class="show">Tableau de bord interactif affichant statistiques du jeu, filtres et graphiques dynamiques.</span>
+		<span data-lang="en">Interactive dashboard showing game statistics, filters and dynamic charts.</span>
+		</p>
+		</div>
+		</article>
+		
+		<article class="role">
+		<div>
+		<h4><span data-lang="fr" class="show">Projet MathGPT (en cours)</span><span data-lang="en">MathGPT Project (ongoing)</span></h4>
+		<div class="muted"><span data-lang="fr" class="show">App Web • ChatBot mathématique</span><span data-lang="en">Web App • Math chatbot</span></div>
+		<p class="desc">
+		<span data-lang="fr" class="show">Application spécialisée en mathématiques (équations, dérivées, intégrales) avec rendu LaTeX et historique.</span>
+		<span data-lang="en">Application specialized in mathematics (equations, derivatives, integrals) with LaTeX rendering and history.</span>
+		</p>
+		</div>
+		</article>
+		</section>
+		
+		<section class="section-block" aria-labelledby="education">
+		<h2 class="section" id="education">
+		<span data-lang="fr" class="show">Éducation</span><span data-lang="en">Education</span>
+		</h2>
+		<div style="margin-bottom:10px">
+		<h4 style="margin:0">Université CNTEMAD Antsirabe</h4>
+		<div class="muted"><span data-lang="fr" class="show">Licence / Informatique — Depuis 2024</span><span data-lang="en">BSc / Computer Science — Since 2024</span></div>
+		<p class="desc"><span data-lang="fr" class="show">Cours principaux: algorithmique, programmation, réseaux, systèmes.</span><span data-lang="en">Main courses: algorithms, programming, networks, systems.</span></p>
+		</div>
+		<div style="matgin-bottom:10px;">
+		<h4 style="margin:0">Lycée André Resampa Antsirabe</h4>
+		<div class="muted"><span data-lang="fr" class="show">Baccalauréat Scientifique — 2024</span><span data-lang="en">Scientific Baccalaureate — 2024</span></div>
+		</div>
+		</section>
+		
+		<section class="section-block" aria-labelledby="extra">
+		<h2 class="section" id="extra">
+		<span data-lang="fr" class="show">Autres informations</span><span data-lang="en">Other information</span>
+		</h2>
+		<div style="display:flex;gap:14px;flex-wrap:wrap">
+		<div style="flex:1;min-width:220px">
+		<strong><span data-lang="fr" class="show">Langages</span><span data-lang="en">Languages</span></strong>
+		<p class="muted"><span data-lang="fr" class="show">Malagasy (maternel), Français (courant), Anglais (intermédiaire)</span><span data-lang="en">Malagasy (native), French (fluent), English (intermediate)</span></p>
+		</div>
+		<div style="flex:1;min-width:220px">
+		<strong><span data-lang="fr" class="show">Outils & Frameworks</span><span data-lang="en">Tools & Frameworks</span></strong>
+		<p class="muted"><span data-lang="fr" class="show">VS Code, Git, GitHub, Bootstrap (connaissance), Chart.js</span><span data-lang="en">VS Code, Git, GitHub, Bootstrap (familiar), Chart.js</span></p>
+		</div>
+		</div>
+		</section>
+		
+		<div style="font-weight:700;" data-lang="fr" class="show ">Centres d'intérêt</div>
+		<div style="font-weight:700;" data-lang="en" class=>Interests</div>
+		<div style="font-size:13px;">Volley-ball • Jeux vidéo • Rap & écriture • IA & Web</div>
+	
+		<section style="padding-top:14px">
+		<div style="margin-top:12px;font-size:13px;display:flex;justify-content:space-between;align-items:center;gap:10px">
+		<div style="font-size:13px"><span data-lang="fr" class="show">Disponible pour stage / freelance <br>• Email: stephanetyas@gmail.com</span><span data-lang="en">Open for internships / freelance<br> • Email: stephanetyas@gmail.com</span></div>
+		<div style="font-size:13px;">Mise à jour: 11 août 2025</div>
+		</div>
+		</section>
+		</td>
+		</tr>
+	</table>
+	</div>
+	<script>
+	
+	const btns = document.querySelectorAll('.lang-btn');
+	function setLang(lang){
+	btns.forEach(b => {
+	const is = b.getAttribute('data-setlang') === lang;
+	b.classList.toggle('active', is);
+	b.setAttribute('aria-pressed', is ? 'true' : 'false');
+	});
+	document.querySelectorAll('[data-lang]').forEach(el=>{
+	if(el.getAttribute('data-lang') === lang) el.classList.add('show'); else el.classList.remove('show');
+	});
+	document.documentElement.lang = lang === 'fr' ? 'fr' : 'en';
+	try{ localStorage.setItem('cv_lang', lang) }catch(e){}
+	}
+	btns.forEach(b=> b.addEventListener('click', ()=> setLang(b.getAttribute('data-setlang'))));
+	const saved = (function(){ try{ return localStorage.getItem('cv_lang') }catch(e){return null} })() || 'fr';
+	setLang(saved);
+	
+	
+	document.querySelectorAll('.bar > i').forEach(function(el){
+	const w = el.getAttribute('data-width') || '0%';
+	setTimeout(()=> el.style.width = w, 60);
+	});
+	</script>
+</body>
+</html>
